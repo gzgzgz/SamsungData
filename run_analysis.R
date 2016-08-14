@@ -47,29 +47,13 @@ library(plyr)
 
   merged_table <- rbind(train_table, test_table)
   rm("train_table", "test_table")
-  subject_set <- sort(unique(merged_table$subject))
   
-  total_mean=data.frame()
-  total_std=data.frame()
   
-  for (sub_ele in subject_set) {
-    mean_act=data.frame(matrix(ncol=0, nrow=1))
-    std_act=data.frame(matrix(ncol=0, nrow=1))
-    for (ele in act_label$V2){
-	    tmp_mean <- as.matrix(sapply(subset(merged_table, activity==ele & subject==sub_ele, select=-c(activity, subject)), mean, na.rm=TRUE))
-      dim(tmp_mean) <- c(1, length(tmp_mean[,1]))
-	    colnames(tmp_mean) <- paste("MEAN", paste(ele, feature_label$V2, sep="_"), sep="_")
-      mean_act <- cbind(mean_act, tmp_mean)
-	  
-	    tmp_std <- as.matrix(sapply(subset(merged_table, activity==ele & subject==sub_ele, select=-c(activity, subject)), sd, na.rm=TRUE))
-	    dim(tmp_std) <- c(1, length(tmp_std[,1]))
-	    colnames(tmp_std) <- paste("STD", paste0(ele, feature_label$V2, sep="_"), sep="_")
-	    std_act <- cbind(std_act, tmp_std)
-    }
-	  total_mean <-rbind(total_mean, mean_act)
-    total_std <- rbind(total_std, std_act)
-  }
-
   
+  mean_and_std <- select(merged_table, matches("activity|subject|mean|std"))
+  arrange(mean_and_std, subject)
+  real_output <- select(merged_table, matches("activity|subject|mean"))
+  arrange(real_output, subject)
+ 
   ### According to the assignment, standard deviations are not required for step 5, therefore we only output the average data set
-  write.table(total_mean, file="result5.txt", row.names=FALSE)
+  write.table(real_output, file="result5.txt", row.names=FALSE)
