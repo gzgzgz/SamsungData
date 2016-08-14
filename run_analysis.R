@@ -51,8 +51,10 @@ library(plyr)
   
   
   mean_and_std <- select(merged_table, matches("activity|subject|mean|std"))
+  names(mean_and_std) <- gsub("[()]","", names(mean_and_std))
   arrange(mean_and_std, subject)
   real_output <- select(merged_table, matches("activity|subject|mean"))
+  names(real_output) <- gsub("[()]","", names(real_output))
   arrange(real_output, subject)
  
   ### According to the assignment, standard deviations are not required for step 5, therefore we only output the average data set
