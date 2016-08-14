@@ -69,7 +69,7 @@ library(plyr)
 	  total_mean <-rbind(total_mean, mean_act)
     total_std <- rbind(total_std, std_act)
   }
-  rm("merged_table")
+
   
   ### According to the assignment, standard deviations are not required for step 5, therefore we only output the average data set
   write.table(total_mean, file="result5.txt", row.names=FALSE)
