@@ -3,7 +3,8 @@
 
 ### The output format
 The output table has all the mean values of each measurement variables from each activity and each subject. This includes both the training data and the test data.
-The first row are the labels for all those variables. The measurement variables first take the lead, and this is followed by last two variables, which are the activity variable and the subject variable.
+The first row are the labels for all those variables. The measurement variables first take the lead, and this is followed by last two variables, which are the activity variable and the subject variable. <br></br>
+In particular, the table has been ordered by the subject variable in ascending order.
 The formats of the labels are specified as the following: <br>
 - measurement variables
   - tBodyAcc-XYZ
