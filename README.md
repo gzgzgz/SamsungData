@@ -1,5 +1,5 @@
 # Getting and Cleaning Data Course Project
-## The data source and what does this script do
+## The data source and the function of this script
 The Human Activity Recognition Database are collected from the accelerometers from the Samsung Galaxy S smartphone. Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living while carrying a waist-mounted smartphone with embedded inertial sensors. The raw data used for this study is downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 <br>A more detailed background description of this data can be followed from this link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones <br></br>
 The dataset includes the following files:
