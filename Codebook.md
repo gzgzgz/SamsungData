@@ -1,5 +1,5 @@
 # The Codebook
-## This Codebook documentes all the variables used in the output file, and how are they arranged
+## This Codebook documentes all the variables used in the output file, and how they are arranged
 
 ### The output format
 The output table has all the mean values of each measurement variables from each activity and each subject. This includes both the training data and the test data.
