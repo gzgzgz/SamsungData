@@ -63,7 +63,7 @@ library(plyr)
       average_set <- cbind(average_set, sapply(subset(mean_and_std, activity==each_activity & subject==each_sub, mean, na.rm=TRUE))
     }
   }
-  
+  average_set <- cbind(average_set, unique(mean_and_std[c("activity", "subject")]))
   ##############################################################################
   
   write.table(average_set, file="tidy.txt", row.names=FALSE)
