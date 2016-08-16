@@ -48,14 +48,22 @@ library(plyr)
   merged_table <- rbind(train_table, test_table)
   rm("train_table", "test_table")
   
-  
-  
   mean_and_std <- select(merged_table, matches("activity|subject|mean|std"))
   names(mean_and_std) <- gsub("[()]","", names(mean_and_std))
   arrange(mean_and_std, subject)
-  real_output <- select(merged_table, matches("activity|subject|mean"))
-  names(real_output) <- gsub("[()]","", names(real_output))
-  arrange(real_output, subject)
- 
-  ### According to the assignment, standard deviations are not required for step 5, therefore we only output the average data set
-  write.table(real_output, file="result5.txt", row.names=FALSE)
+
+  ################## The missing part from previous revision ###################
+  ### Forgot to average the mean and std data set
+  ### Now need to create a second data set to average each variable for each activity
+  ### and each subject
+  
+  average_set <- data.frame()
+  for (each_sub in unique(mean_and_std$subject)) {
+    for (each_activity in unique(mean_and_std$activity)) {
+      average_set <- cbind(average_set, sapply(subset(mean_and_std, activity==each_activity & subject==each_sub, mean, na.rm=TRUE))
+    }
+  }
+  
+  ##############################################################################
+  
+  write.table(average_set, file="tidy.txt", row.names=FALSE)
