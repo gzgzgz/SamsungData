@@ -54,7 +54,7 @@ library(plyr)
   names(mean_and_std) <- gsub("^t","Time", names(mean_and_std))
   names(mean_and_std) <- gsub("^f", "Freq", names(mean_and_std))
   names(mean_and_std) <- gsub("[()]","", names(mean_and_std))
-  arrange(mean_and_std, subject)
+
   
   used_col_no <- ncol(mean_and_std)-2
   average_set <- matrix(nrow=0, ncol=used_col_no)
@@ -67,5 +67,7 @@ library(plyr)
   average_set <- as.data.frame(average_set)
   average_set <- cbind(average_set, unique(mean_and_std[c("activity", "subject")]))
   names(average_set) <- names(mean_and_std)
+  
+  average_set <- arrange(average_set, subject)
   ### According to the assignment, standard deviations are not required for step 5, therefore we only output the average data set
   write.table(average_set, file="tidy.txt", row.names=FALSE)
