@@ -25,7 +25,7 @@ The formats of the labels are specified as the following: <br>
   - fBodyGyroMag
   - fBodyGyroJerkMag
   
-<b><i>The measurement variables all has keywords "mean" and "std" to represent if they are mean values or standard deviation values of the meausrement variables.</i></b>
+<b><i>The measurement variables all has keywords "mean" and "std" inserted and separated by "_" symbol to represent if they are mean values or standard deviation values of the meausrement variables.</i></b>
 - activity variables (Interger ranging from 1 to 6.)
   - 1 --- WALKING --- subject was walking during the test
   - 2 --- WALKING_UPSTAIRS --- subject was walking up a staircase during the test
