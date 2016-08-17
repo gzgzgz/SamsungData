@@ -1,12 +1,12 @@
 # The Codebook (Revision from last failure)
-## This Codebook documentes all the variables used in the output file, and how they are arranged
+## This Codebook documentes all the variables used in the output file, and how they are acquired and arranged
 
 ### The output format
 The output table has the average of the mean values and standard deviation values from each measurement variable collected on each activity and each subject. This includes both the training data and the test data.
 The first row, which are the labels for all those variables, are ordered as follows: first, the measurement variables take the lead,  followed by last two variables, the activity variable and the subject variable. <br></br>
 In particular, the table has been ordered by the subject variable in ascending order.
 The formats of the labels are specified as the following: <br>
-- measurement variables
+- base measurement variables
   - tBodyAcc-XYZ
   - tGravityAcc-XYZ
   - tBodyAccJerk-XYZ
@@ -25,7 +25,7 @@ The formats of the labels are specified as the following: <br>
   - fBodyGyroMag
   - fBodyGyroJerkMag
   
-<i>The measurement variables all has keywords "mean" and "std" to represent if they are mean values or standard deviation values of the meausrement variables.</i>
+<b><i>The measurement variables all has keywords "mean" and "std" to represent if they are mean values or standard deviation values of the meausrement variables.</i></b>
 - activity variables (Interger ranging from 1 to 6.)
   - 1 --- WALKING --- subject was walking during the test
   - 2 --- WALKING_UPSTAIRS --- subject was walking up a staircase during the test
