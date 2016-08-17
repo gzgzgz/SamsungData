@@ -25,7 +25,7 @@ Overall, this script does the following things: <br>
 - A R script named "run_analysis.R"
 - A Readme file
 - A codebook to define the variables
-- A result txt file, the output 
+- A result txt file, named "tidy.txt", is the tidy data output
 
 ## How to run the run_analysis.R script and obtain the output
 To run the script, one will need to make sure that the unzipped Samsung activity sensor data folder is located in the same working directory as the "run_analysis.R" script. If this data folder does not exist, the script will try to download the zip file from the web,  unzip it under the same working directory, and proceed. The output file is named "result5.txt". It will be saved under the same working directory as the "run_analysis.R" script.
