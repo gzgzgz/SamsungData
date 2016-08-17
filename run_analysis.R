@@ -49,7 +49,7 @@ library(plyr)
   merged_table <- rbind(train_table, test_table)
   rm("train_table", "test_table")
   
-  mean_and_std <- select(merged_table, matches("activity|subject|mean|std"))
+  mean_and_std <- select(merged_table, matches("activity|subject|(^[tf].*?(mean)|(std))"))
   names(mean_and_std) <- gsub("[()]","", names(mean_and_std))
   arrange(mean_and_std, subject)
 
