@@ -1,5 +1,5 @@
 # The Codebook (Revision from last failure)
-## This Codebook documentes all the variables used in the output file, and how they are acquired and arranged
+## This Codebook documents all the variables used in the output file, and how they are acquired and arranged
 
 ### The output format
 The output table has the average of the mean values and standard deviation values from each measurement variable collected on each activity and each subject. This includes both the training data and the test data.
