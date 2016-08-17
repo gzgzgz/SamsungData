@@ -4,6 +4,7 @@
 #     Homework for the Getting&Cleaning Data Course       
 #
 #              by Zhi Guo,   Aug 12, 2016
+#                 rev.   Aug 16, 2016
 #
 #########################################################
 
@@ -57,13 +58,18 @@ library(plyr)
   ### Now need to create a second data set to average each variable for each activity
   ### and each subject
   
-  average_set <- data.frame()
+  used_col_no <- ncol(mean_and_std)-2
+  average_set <- matrix(nrow=0, ncol=used_col_no)
   for (each_sub in unique(mean_and_std$subject)) {
     for (each_activity in unique(mean_and_std$activity)) {
-      average_set <- cbind(average_set, sapply(subset(mean_and_std, activity==each_activity & subject==each_sub, mean, na.rm=TRUE))
+      average_set <- rbind(average_set, sapply(subset(mean_and_std, activity==each_activity & subject==each_sub, select=-c(activity, subject)), mean, na.rm=TRUE))
     }
   }
+  names(average_set) <- colnames(mean_and_std)[1:used_col_no]
+  average_set <- as.data.frame(average_set)
   average_set <- cbind(average_set, unique(mean_and_std[c("activity", "subject")]))
+  names(average_set) <- names(mean_and_std)
+  
   ##############################################################################
   
   write.table(average_set, file="tidy.txt", row.names=FALSE)
