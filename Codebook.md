@@ -3,7 +3,7 @@
 
 ### The output format
 The output table has the average of the mean values and standard deviation values from each measurement variable collected on each activity and each subject. This includes both the training data and the test data.
-The first row, which are the labels for all those variables, are ordered as follows: the measurement variables first take the lead, and this is followed by last two variables, which are the activity variable and the subject variable. <br></br>
+The first row, which are the labels for all those variables, are ordered as follows: first, the measurement variables take the lead,  followed by last two variables, the activity variable and the subject variable. <br></br>
 In particular, the table has been ordered by the subject variable in ascending order.
 The formats of the labels are specified as the following: <br>
 - measurement variables
