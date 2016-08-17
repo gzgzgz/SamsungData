@@ -50,7 +50,7 @@ library(plyr)
   
   
   
-  mean_and_std <- select(merged_table, matches("activity|subject|(^[tf].*?(mean)|(std))"))
+  mean_and_std <- select(merged_table, matches("activity|subject|(^[tf].*?(mean\\()|(std\\())"))
   names(mean_and_std) <- gsub("^t","Time", names(mean_and_std))
   names(mean_and_std) <- gsub("^f", "Freq", names(mean_and_std))
   names(mean_and_std) <- gsub("[()]","", names(mean_and_std))
