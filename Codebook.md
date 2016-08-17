@@ -23,7 +23,7 @@ The formats of the labels are specified as the following: <br>
   - fBodyAccMag
   - fBodyAccJerkMag
   - fBodyGyroMag
-  - fBodyGyroJerkMag
+  - fBodyGyroJerkMag <br></br>
 <b><i>The first letter "t" or "f" of the above labels have been replaced by "Time" and "Freq" respectively for better clarity</b></i>
 <b><i>The measurement variables all has keywords "mean" and "std" separated by "_" symbol to represent if they are mean values or standard deviation values of the meausrement variables.</i></b>
 - activity variables (Interger ranging from 1 to 6.)
