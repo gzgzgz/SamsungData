@@ -14,7 +14,7 @@ The dataset includes the following files:
 <li>'test/subject_test.txt': Test subjects labels.</li>
 </ul>
 
-Overall, this script does the following things: <br>
+Overall, this script does the following things (please see the codebook.md for more details): <br>
 (1) Merges the training and the test sets to create one data set. <br>
 (2) Extracts only the measurements on the mean and standard deviation for each measurement.<br>
 (3) Uses descriptive activity names to name the activities in the data set<br>
